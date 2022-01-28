@@ -5,7 +5,7 @@ pipeline {
       agent any
       steps {
         sh '''cd springboot-template
-mvn package -B -X 
+mvn install
 ls 
 ls target 
 '''
