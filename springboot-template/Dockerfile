@@ -3,8 +3,7 @@ FROM openjdk:11-jdk-slim
 WORKDIR /app
 
 copy . .
-RUN cd app && ls
-
+RUN ls app
 RUN pwd
 RUN ls target
 
