@@ -1,6 +1,7 @@
 
 FROM openjdk:8-jdk-alpine
-copy . .
-ARG JAR_FILE=target/*.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+WORKDIR /app
+# Copy all files from current directory to working dir in image
+COPY ./target ./target
+ENTRYPOINT ["java","-jar","target/app.jar"]
