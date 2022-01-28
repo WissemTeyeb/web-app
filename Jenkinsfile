@@ -7,7 +7,7 @@ pipeline {
         sh '''cd springboot-template
 mvn package -B -X 
 ls 
-
+ls target 
 '''
       }
     }
