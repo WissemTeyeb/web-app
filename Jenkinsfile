@@ -23,7 +23,7 @@ yarn run build'''
 
     stage('final-stage') {
       steps {
-        sh 'docker-compose -v'
+        sh 'docker-compose build'
       }
     }
 
