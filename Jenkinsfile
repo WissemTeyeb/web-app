@@ -24,7 +24,7 @@ yarn run build'''
     stage('final-stage') {
       steps {
         sh '''
-docker image rm 70461e8943d9/web-app 
+docker image ls
 docker-compose build'''
       }
     }
