@@ -23,7 +23,7 @@ yarn run build'''
 
     stage('final-stage') {
       steps {
-        sh 'echo "on a terminé"'
+        sh 'docker -v'
       }
     }
 
