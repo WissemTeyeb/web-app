@@ -6,6 +6,7 @@ pipeline {
       steps {
         sh '''cd springboot-template
 mvn package -B -X 
+ls
 
 '''
       }
