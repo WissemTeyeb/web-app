@@ -2,7 +2,8 @@ FROM node:14 AS builder
 # Set working directory
 WORKDIR /app
 # Copy all files from current directory to working dir in image
-COPY ./build .
+COPY ./build ./build
+
 # install node modules and build assets
 # nginx state for serving content
 FROM nginx:alpine
