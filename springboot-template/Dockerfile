@@ -1,9 +1,5 @@
-# Dockerfile
-FROM openjdk:11-jdk-slim
-WORKDIR /app
+from openjdk:15.0.2-jdk-buster
 
-copy . .
-RUN ls 
-RUN pwd
-RUN ls target
-
+VOLUME /tmp
+ADD /target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
