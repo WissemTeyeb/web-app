@@ -10,9 +10,10 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 # Remove default nginx static assets
 RUN rm -rf ./*
+RUN ls
 # Copy static assets from builder stage
 COPY --from=builder /app/build .
-RUN ls
+
 
 COPY ./nginx.conf /etc/nginx/
 
