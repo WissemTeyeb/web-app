@@ -25,7 +25,7 @@ yarn run build'''
     stage('final-stage') {
       steps {
         sh '''
-docker image ls
+docker image rm 70461e8943d9/spring-boot
 docker-compose build'''
       }
     }
