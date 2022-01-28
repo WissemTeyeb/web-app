@@ -11,5 +11,15 @@ mvn package -B -X
       }
     }
 
+    stage('build-react-app') {
+      steps {
+        sh '''cd react-template
+
+yarn install
+
+yarn run build'''
+      }
+    }
+
   }
 }
