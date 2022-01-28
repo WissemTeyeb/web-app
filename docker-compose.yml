@@ -8,5 +8,11 @@ services:
     restart: always
     ports:
       - "80:80"
+  spring:
+    build: ./springboot-template
+    image: docker.io/70461e8943d9/spring-boot
+    restart: always
+    ports:
+      - "8085:8085"
 
 
