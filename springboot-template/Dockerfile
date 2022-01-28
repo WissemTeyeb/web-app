@@ -1,6 +1,6 @@
 from openjdk:15.0.2-jdk-buster
-WORKDIR /app
 
-COPY ./target ./target
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
 
-RUN ls
+ENTRYPOINT ["java","-jar","/app.jar"]
