@@ -21,9 +21,9 @@ yarn run build'''
       }
     }
 
-    stage('docker-compose') {
+    stage('final-stage') {
       steps {
-        sh 'docker-compose build'
+        sh 'echo "on a terminé"'
       }
     }
 
