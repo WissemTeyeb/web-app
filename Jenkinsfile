@@ -2,7 +2,6 @@ pipeline {
   agent any
   stages {
     stage('build-spring-app') {
- 
       steps {
         sh '''cd springboot-template
 mvn install
