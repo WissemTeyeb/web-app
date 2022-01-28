@@ -4,7 +4,9 @@ pipeline {
     stage('build-spring-app') {
       agent any
       steps {
-        sh '''mvn package -B -X ./springboot-template
+        sh '''cd springboot-template
+mvn package -B -X 
+cd ..
 '''
       }
     }
