@@ -1,0 +1,25 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  my-app
+  labels:
+    app: my-app
+    type: spring-rest
+spec:
+  template:
+    metadata:
+      labels:
+        app:  my-app
+        type: spring-rest-deploy
+    spec:
+      containers:
+      - name: spring-container
+        image: docker.io/70461e8943d9/spring-boot
+        ports:
+        - containerPort: 8085
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+      type: spring-rest-deploy

@@ -1,0 +1,13 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-app-node
+spec:
+  type: NodePort
+  ports:
+    - port: 8085
+  selector:
+    app: my-app
+    type: spring-rest-deploy
+

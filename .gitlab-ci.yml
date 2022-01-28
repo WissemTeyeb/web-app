@@ -1,0 +1,50 @@
+image: maven:3.6.3-jdk-13
+
+services:
+  - docker:dind
+
+variables:
+  DoCKER_DRIVER: overlay
+  SPRING_PROFILE_ACTIVE: gitlab-ci
+  USER_GITLAB: wissemteyeb
+  APP_NAME: spring-test
+  REPO: springboot-template
+
+
+
+stages:
+  - build
+  - docker
+  - docker-compose-build-step
+
+maven-build:
+  image: maven:3.6.3-jdk-13
+  stage: build
+  script: mvn package -B -X
+  artifacts:
+    paths:
+      - target/*.jar
+  only:
+    - master
+
+docker-build-step:
+  image: docker
+  stage: docker
+  script:
+    - docker build -t springboot-template .
+    - docker login -u "70461e8943d9" -p "wissem75712600" docker.io
+  only:
+    - master
+docker-compose-build-step:
+  stage: docker-compose-build-step
+  image:  tmaier/docker-compose:latest
+  script:
+   - docker build -t springboot-template .
+   - docker login -u "70461e8943d9" -p "wissem75712600" docker.io
+   - docker-compose build
+   - docker-compose push
+  only:
+    - master
+  
+
+

@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+
+
+  react-app:
+    build: ./react-template
+    image: docker.io/70461e8943d9/web-app
+    restart: always
+    ports:
+      - "80:80"
+
+

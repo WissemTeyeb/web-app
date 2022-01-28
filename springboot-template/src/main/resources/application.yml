@@ -1,0 +1,5 @@
+jwt:
+  secret: +o2SlyyD4B1y1CKwpJ633Ul/IkAvYFUVJz/vuIhUmh0v0WVRQKhVhITXv8p9RX1w/eydtZXRob2QnOidBRVMtMTI4LUNCQycsJ2l2JzonMTA4OTIzMjEwMDQ0MjkzMid9
+server:
+  port: 8080
+
