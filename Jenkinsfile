@@ -30,7 +30,7 @@ docker-compose build'''
 
     stage('deploy-kubernetes') {
       steps {
-        sh 'kubectl create -f *.yaml'
+        sh 'ssh @wiss192.168.1.92'
       }
     }
 
