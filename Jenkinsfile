@@ -21,11 +21,16 @@ yarn run build'''
       }
     }
 
-    stage('final-stage') {
+    stage('docker-compose-build') {
       steps {
         sh '''
-docker image ls
 docker-compose build'''
+      }
+    }
+
+    stage('deploy-kubernetes') {
+      steps {
+        sh 'kubectl create -f *.yaml'
       }
     }
 
