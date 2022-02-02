@@ -30,7 +30,7 @@ docker-compose build'''
 
     stage('deploy-kubernetes') {
       steps {
-        sh 'ssh @wiss192.168.1.92'
+        sh 'ssh 192.168.1.92'
       }
     }
 
